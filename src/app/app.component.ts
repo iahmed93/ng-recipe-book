@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipe-book';
+
+  currentItem = 'recipes'
+
+  onItemSelected(selectedItem){
+    this.currentItem = selectedItem;
+  }
 }
