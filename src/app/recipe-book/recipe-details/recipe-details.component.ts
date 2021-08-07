@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Recipe } from '../Recipe';
 
 @Component({
@@ -6,12 +6,17 @@ import { Recipe } from '../Recipe';
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css']
 })
-export class RecipeDetailsComponent implements OnInit {
+export class RecipeDetailsComponent implements OnInit, OnChanges{
 
-  recipe: Recipe = new Recipe("test", "Testing recipe", "https://tpc.googlesyndication.com/simgad/17186930116409687848/downsize_200k_v1?w=400&h=209")
+  @Input() recipe: Recipe;
+
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes)
+  }
 
   ngOnInit(): void {
   }
+
 
 }

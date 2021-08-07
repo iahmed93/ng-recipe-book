@@ -1,40 +1,45 @@
-<div class="row">
-    <div class="col-md-12">
-        <img [src]="recipe.imagePath" alt="" class="img-responsive">
+<div *ngIf="recipe">
+    <div class="row">
+        <div class="col-md-12">
+            <img [src]="recipe.imagePath" alt="" class="img-responsive">
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12">
-        <h1>{{recipe.name}}</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>{{recipe.name}}</h1>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Manage <span class="caret"></span>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Add Ingredients to shopping list</a>
-                <a class="dropdown-item" href="#">Edit Recipe</a>
-                <a class="dropdown-item" href="#">Delete Recipe</a>
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="dropdown" appDropdown>
+                <button class="btn btn-default dropdown-toggle open" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Manage
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu open" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Add Ingredients to shopping list</a></li>
+                    <li><a href="#">Edit Recipe</a></li>
+                    <li><a href="#">Delete Recipe</a></li>
+                </ul>
             </div>
-          </div>
+
+        </div>
     </div>
-</div>
 
 
-<div class="row">
-    <div class="col-md-12">
-        <div>{{recipe.description}}</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>{{recipe.description}}</div>
+        </div>
     </div>
-</div>
 
 
-<div class="row">
-    <div class="col-md-12">
-        <div>Ingredients</div>
+    <div class="row">
+        <div class="col-md-12">
+            <div>Ingredients</div>
+        </div>
     </div>
 </div>
