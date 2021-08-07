@@ -11,7 +11,11 @@ export class RecipeDetailsComponent{
 
   @Input() recipe: Recipe;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
+
+  onAddIngredientsToShoppingList(){
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
 
 }
